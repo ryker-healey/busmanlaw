@@ -1,0 +1,275 @@
+/* Ryker Healey, Southern Illinois University, developed 12/10/24 tested 12/13/24*/ 
+html {
+    font-size: 120%;/*for readability*/
+}
+main {
+       background-color: #fff;
+    padding: 1.25rem;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    border: 1px solid grey;
+    text-align: center;
+    font-size: larger;/*for readability*/
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    line-height: 1.5;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: white;
+}
+/*Logo hover effect along with site title spacing*/
+.logo {
+    flex: 0 0 auto;
+    position: relative;
+    width: 5rem;
+    height: auto;
+}
+
+.logo-img {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease;
+}
+
+.hover-logo {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.logo:hover .main-logo {
+    opacity: 0;
+}
+
+.logo:hover .hover-logo {
+    opacity: 1;
+}
+.site-title {
+    flex: 1;
+    text-align: center;
+    font-size: 2rem;
+    margin-right: 3em; /*makes center correctly*/
+  font-family: "orbitron", sans-serif;
+font-weight: 700;
+font-style: normal;
+}
+
+/* Nav styles with horizontal layout and hover effect */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 0.625rem 0;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-list li {
+    padding: 0.6rem; 
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem; 
+    transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+    color: blue;
+}
+
+/*code for three layer layout on main page and responsiveness*/
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* Middle column takes 50% (2fr), others take 25% (1fr) */
+    gap: 1.25rem;
+    padding: 1.25rem;
+    margin-top: 1.25rem;
+}
+
+.column {
+    background-color: #fff;
+    padding: 1.25rem;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    border: 1px solid grey;
+    text-align: center;
+    font-size: larger;
+}
+.column img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+/* Style for columns in pages other than the main */
+.tcontainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.tcolumn {
+    min-width: 280px;
+    box-sizing: border-box;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid grey;
+    font-size: larger;
+}
+.tcolumn img {
+    width: 100%;
+    float: left;
+}
+h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 2rem;
+}
+/*form styles*/
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid grey;
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.submit-btn,
+.reset-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem; 
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.reset-btn {
+    background-color: #fff;
+}
+
+/*table css, makes heads green adds margins and responsiveness*/
+.rtable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+}
+
+.rtable th,
+.rtable td {
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.rtable th {
+    background-color: #4caf50;
+    color: white;
+}
+
+.rtable tr:nth-child(even) {
+    background-color: #fff;
+}
+
+.rtable tr:hover {
+    background-color: #ddd;
+}
+/*mobile adjustments*/
+@media (max-width: 1024px) {
+    .container, .tcontainer {
+        grid-template-columns: 1fr; /* 1 column on smaller screens */
+    }
+
+    .nav-list {
+        flex-direction: column; /* Stack nav items vertically on mobile */
+        align-items: center;
+    }
+
+    .nav-list li {
+        margin-bottom: 0.6rem;
+    }
+
+    .nav-list a {
+        font-size: 1.9rem;
+    }
+
+    .site-title {
+        font-size: 2rem;
+    }
+
+    .form-container {
+        padding: 1.5rem;
+    }
+
+    .submit-btn,
+    .reset-btn {
+        font-size: 0.8rem;
+    }
+    .rtable {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        width: 100%;
+        max-width: fit-content;
+        margin-left: 26%;
+    }
+
+    /* Stack table headers above rows on small screens */
+    .rtable th,
+    .rtable td {
+        display: block;
+        text-align: right;
+        padding: 1.2rem;
+    }
+
+    .rtable th {
+        background-color: lime;
+        color: white;
+        font-size: 1.4rem;
+        text-align: left;
+        padding: 1rem;
+    }
+
+    .rtable td {
+        text-align: left;
+        font-size: 1.2rem;
+    }
+}

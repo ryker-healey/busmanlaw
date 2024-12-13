@@ -1,0 +1,53 @@
+/* Ryker Healey, Southern Illinois University, developed 12/10/24 tested 12/13/24*/ 
+
+@media print {
+    /*makes everything black for printing */
+    body {
+        color: black;
+        background-color: white;
+    }
+
+    /* Remove images to save ink*/
+    img {
+        display: none;
+    }
+
+    /* Remove non-essential elements*/
+    .navbar, .header, .footer {
+        display: none;
+    }
+
+    /* Ensure the content takes up the full page width */
+    .container {
+        width: 100% ;
+        padding: 0;
+        margin: 0;
+    }
+
+    .column {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    * {
+        color: black;
+        background-color: white;
+    }
+
+    /* Remove background colors */
+    .header, .navbar {
+        background-color: transparent;
+    }
+
+    /* Make the font more legible for print */
+    .site-title {
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    /* Remove borders and other unnecessary visual elements */
+    .logo-img, .hover-logo {
+        display: none;
+    }
+}

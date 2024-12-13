@@ -1,0 +1,43 @@
+<!-- Ryker Healey, Southern Illinois University, developed 12/10/24 tested 12/13/24-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey Data - Busman Law</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function loadSurveyData() {
+            const name = localStorage.getItem('name');
+            const email = localStorage.getItem('email');
+            const comments = localStorage.getItem('comments');
+            
+                document.getElementById('nameDisplay').textContent = name;
+                document.getElementById('emailDisplay').textContent = email;
+                document.getElementById('commentsDisplay').textContent = comments;
+  
+    </script>
+</head>
+<body onload="loadSurveyData()">
+
+    <header class="header">
+        <h1 class="site-title">Busman Law - Survey Results</h1>
+    </header>
+
+    <section class="survey-data-section">
+        <h2>Survey Data Submission</h2>
+
+      
+        <p id="surveyMessage" style="color: red;"></p>
+
+       
+        <p><strong>Name:</strong> <span id="nameDisplay"></span></p>
+        <p><strong>Email:</strong> <span id="emailDisplay"></span></p>
+        <p><strong>Comments:</strong> <span id="commentsDisplay"></span></p>
+
+     
+        <p><a href="index.html">Go back to the home page</a></p>
+    </section>
+
+</body>
+</html>
